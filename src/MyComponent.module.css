@@ -1,0 +1,54 @@
+ul {
+	font-size: 20px;
+}
+
+.count {
+	color: rgb(7, 177, 277);
+}
+.text{
+	color: orchid;
+}
+button.password {
+	color: greenyellow;
+	background-color: darkslateblue;
+	padding: 12px;
+	box-shadow: 3px 2px 5px;
+	border: none;
+	border-radius: 7px;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+button.password:hover {
+	background-color: orangered;
+	color: gold;
+}
+
+button {
+	background-color: blue;
+	color: whitesmoke;
+	padding: 12px;
+	box-shadow: 3px 2px 5px;
+	border: none;
+	border-radius: 7px;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: greenyellow;
+	color: orangered;
+	box-shadow: 3px 2px 5px orangered;
+}
+
+.red {
+	color: crimson;
+	text-align: center;
+	font-size: larger;
+}
+
+.yellow {
+	color: yellow;
+	text-align: center;
+	font-size: 28px;
+}
