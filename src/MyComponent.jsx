@@ -1,68 +1,77 @@
 //import { useEffect } from 'react';
-import { useState } from 'react';
-import styles from './MyComponent.module.css';
-
-const getTimeFromDate = (time) => time.toISOString().substring(11, 19);
+import {useState} from 'react'
+import styles from './MyComponent.module.css'
 
 const products = [
-	{ id: 'que', name: 'Teapot' },
-	{ id: 'rty', name: 'Iron' },
-];
+	{id: 'que', name: 'Teapot'},
+	{id: 'rty', name: 'Iron'},
+]
+const getTimeFromDate = (time) => time.toISOString().substring(11, 19)
 
 export const MyComponent = () => {
-	const [currentDate, setCurrentDate] = useState(new Date())
-	const  date = new Date();
-
+	const date = new Date()
 	// useEffect(() => {
 	// 	console.log(date)
 	// }, [])
+	//----------------------------------------------
+	const [currentDate, setCurrentDate] = useState(new Date())
 
-		setTimeout(() => {
-			setCurrentDate(new Date());
-		}, 1000);
-   const currentTime = getTimeFromDate(currentDate)
+	setTimeout(() => {
+		setCurrentDate(new Date())
+	}, 1000)
 
-	// const [obj, setObj] = useState({ a: 10, b: 20, c: 30 });
+	const currentTime = getTimeFromDate(currentDate)
+	//--------------------------------------------
+	//ИММУТАБЕЛЬНОСТЬ-невозможность быть мутированным, подвергнуться мутации:
+	const [obj, setObj] = useState({a: 10, b: 20, c: 30})
 	//setObj({ a: 20, b: 20, c: 30 });
-	// if (obj.a === 10) {
-	// 	setObj({ ...obj, a: 20 });
-	// }
-
-	const [value, setValue] = useState(0);
+	if (obj.a === 10) {
+		setObj({...obj, a: 20})
+	}
+	//-------------------------------------------
+	const [value, setValue] = useState(0)
 	const onClick = (event) => {
 		// setValue(value + 1);
 		//console.log(event);
 		//накапливание суммы:
-		setValue((updatedValue) => updatedValue + 1);
-		setValue((updatedValue) => updatedValue + 1);
+		setValue((updatedValue) => updatedValue + 1)
+		setValue((updatedValue) => updatedValue + 1)
 	}
-
-
-	const [showText, setShowText] = useState(true);
+	//---------------------------------------------
+	const [showText, setShowText] = useState(true)
 	const btnShow = () => {
-			setShowText(!showText);
+		setShowText(!showText)
 	}
-	const text = <div className={styles.text}>Это секретный Пароль</div>;
-
-
-	const [showRedText, setShowRedText] = useState(false);
-   const changeColor = () => {
-			setShowRedText(!showRedText);
-		};
+	const text = <div className={styles.secret}>Secret Password</div>
+	//--------------------------------------------------------
+	const [showRedText, setShowRedText] = useState(false)
+	const changeColor = () => {
+		setShowRedText(!showRedText)
+	}
 	const colorText = (
-		<div className={showRedText
-			? styles.red
-			: styles.yellow}>
-			Изменяемый Цвет Текста
+		<div className={showRedText ? styles.red : styles.yellow}>
+			Variable Color of Text
 		</div>
-	);
+	)
 
 	return (
 		<>
 			<div>{String(date)}</div>
-			<div>Точное летнее время: {currentTime}</div>
 
-			{/* <div>{obj.a}</div> */}
+			<div>Precise summer time: {currentTime}</div>
+
+			<div className={styles.text}> I'm really enjoying learning React -:)</div>
+
+			<div className={styles.count}>{value}</div>
+			<button onClick={onClick}>ADD + 2</button>
+
+			{showText && text}
+			<button className={styles.password} onClick={btnShow}>
+				{showText ? 'Hide' : 'Show'} Password
+			</button>
+
+			<div>{colorText}</div>
+			<button onClick={changeColor}>Change the Color of Text</button>
 
 			<ul>
 				NEW Products:
@@ -71,23 +80,14 @@ export const MyComponent = () => {
 				))}
 			</ul>
 
-			<div className={styles.count}>{value}</div>
-			<button onClick={onClick}>ADD + 2</button>
-
-			{showText && text}
-			<button className={styles.password} onClick={btnShow}>{showText ? 'Скрыть' : 'Показать'} Пароль</button>
-
-			<div>{colorText}</div>
-			<button onClick={changeColor}>Изменить цвет текста</button>
-
-			<div>Мне очень нравится изучать React -:)</div>
+			<div>* {obj.a} *</div>
 		</>
 	)
-};
+}
 
 //Первоначальный вариант кода:
 // const getValue = () => 123;
-//
+
 // export const MyComponent = (props) => {
 // 	//const value = 123;
 // 	//const className = 'divElement';
@@ -121,6 +121,8 @@ export const MyComponent = () => {
 
 //return <div>{currentDate.toISOString().substring(11, 19)}</div>
 
+//условный рендаринг
 // export const MyCpmponent = () => {
 // 	return null
 // }
+//возвращается НИЧЕГО / путота (null, unefined, true, false)

@@ -1,12 +1,13 @@
-ul {
-	font-size: 20px;
+.text{
+	color: lime;
 }
 
 .count {
 	color: rgb(7, 177, 277);
 }
 
-.text {
+.secret {
+	margin-top: 12px;
 	color: orchid;
 }
 
@@ -30,6 +31,7 @@ button.password:hover {
 }
 
 button {
+	margin-bottom: 12px;
 	background-color: blue;
 	color: whitesmoke;
 	padding: 12px;
@@ -56,4 +58,9 @@ button:hover {
 	color: yellow;
 	text-align: center;
 	font-size: 28px;
+}
+
+ul {
+	color: lightcoral;
+	font-size: 20px;
 }
