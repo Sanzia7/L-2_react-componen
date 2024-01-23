@@ -5,9 +5,11 @@ ul {
 .count {
 	color: rgb(7, 177, 277);
 }
-.text{
+
+.text {
 	color: orchid;
 }
+
 button.password {
 	color: greenyellow;
 	background-color: darkslateblue;
@@ -17,11 +19,14 @@ button.password {
 	border-radius: 7px;
 	font-size: 22px;
 	cursor: pointer;
+	transition: transform 0.3s;
 }
 
 button.password:hover {
 	background-color: orangered;
-	color: gold;
+	color: greenyellow;
+	box-shadow: 3px 2px 5px;
+	transform: scale(1.09);
 }
 
 button {

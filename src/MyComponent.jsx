@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+//import { useEffect } from 'react';
 import { useState } from 'react';
 import styles from './MyComponent.module.css';
 
-const getTimeFromDate = (date) => date.toISOString().substring(11, 19);
+const getTimeFromDate = (time) => time.toISOString().substring(11, 19);
 
 const products = [
 	{ id: 'que', name: 'Teapot' },
@@ -13,12 +13,11 @@ export const MyComponent = () => {
 	const [currentDate, setCurrentDate] = useState(new Date())
 	const  date = new Date();
 
-	useEffect(() => {
-		console.log(date)
-	}, [])
+	// useEffect(() => {
+	// 	console.log(date)
+	// }, [])
 
 		setTimeout(() => {
-			//date = new Date();
 			setCurrentDate(new Date());
 		}, 1000);
    const currentTime = getTimeFromDate(currentDate)
