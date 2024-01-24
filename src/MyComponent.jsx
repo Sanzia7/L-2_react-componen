@@ -32,25 +32,31 @@ export const MyComponent = () => {
 	const [value, setValue] = useState(0)
 	const onClick = (event) => {
 		// setValue(value + 1);
-		//console.log(event);
+		console.log(event)
 		//накапливание суммы:
 		setValue((updatedValue) => updatedValue + 1)
 		setValue((updatedValue) => updatedValue + 1)
+		// setValue((updatedValue) => updatedValue + 1)
 	}
 	//---------------------------------------------
 	const [showText, setShowText] = useState(true)
-	const btnShow = () => {
+
+	const showBtn = () => {
 		setShowText(!showText)
 	}
+
 	const text = <div className={styles.secret}>Secret Password</div>
+
 	//--------------------------------------------------------
-	const [showRedText, setShowRedText] = useState(false)
-	const changeColor = () => {
-		setShowRedText(!showRedText)
+	const [changeColorText, setChangeColorText] = useState(false)
+
+	const changeBtn = () => {
+		setChangeColorText(!changeColorText)
 	}
+
 	const colorText = (
-		<div className={showRedText ? styles.red : styles.yellow}>
-			Variable Color of Text
+		<div className={changeColorText ? styles.red : styles.yellow}>
+			Changeable text color
 		</div>
 	)
 
@@ -66,12 +72,12 @@ export const MyComponent = () => {
 			<button onClick={onClick}>ADD + 2</button>
 
 			{showText && text}
-			<button className={styles.password} onClick={btnShow}>
+			<button className={styles.password} onClick={showBtn}>
 				{showText ? 'Hide' : 'Show'} Password
 			</button>
 
 			<div>{colorText}</div>
-			<button onClick={changeColor}>Change the Color of Text</button>
+			<button onClick={changeBtn}>Change the Color of Text</button>
 
 			<ul>
 				NEW Products:

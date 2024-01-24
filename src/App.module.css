@@ -3,7 +3,7 @@
 }
 
 .logo {
-	height: 20vmin;
+	height: 18vmin;
 	pointer-events: none;
 }
 
@@ -14,16 +14,17 @@
 }
 
 .header {
-	background-color: #282c34;
+	/* background-color: #282c34; */
+	background-color: #023849;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	line-height: 40px;
+	/* line-height: 40px; */
+	line-height: calc(23px + 2vmin);
 	font-size: calc(7px + 2vmin);
 	color: white;
-	margin-top: 12px;
 	gap: 7px;
 }
 
